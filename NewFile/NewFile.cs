@@ -189,7 +189,7 @@ namespace NewFile
         {
             if (name.Contains("."))
             {                
-                string ext = Path.GetExtension(name);
+                string ext = Path.GetExtension(name).ToLower();
                 if (TxtFormats.Contains(ext))
                 {
                     return FileType.File;

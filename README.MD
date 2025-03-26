@@ -14,7 +14,7 @@ Total Commander has a built-in folder creation function (default: **F7**) and se
 5. **Two Toggleable options**:  
    - **Write clipboard content (F1)**: Pastes clipboard text into the new file (ignored for folders).  
    - **Open after creation (F2)**: Opens the created file with the default Windows program, or folder in totalcmd.
-6. ** Two Manual buttons**:  
+6. **Two Manual buttons**:  
    - **Folder (Enter)**: Forces folder creation, regardless of input.  
    - **File (Shift+Enter)**: Forces file creation, regardless of input.  
 7. **Configuration file (`NewFile.ini`)**:  

@@ -48,7 +48,6 @@ txtformat = .txt,.md,.ini,.py,.xml,.cs
 button=
 cmd=%COMMANDER_PATH%\plugins\addons\newfile\NewFile.exe
 param=%P
-path=%COMMANDER_PATH%\plugins\addons\newfile
 ```
 3. Configure the totalcmd shortkey `F7` to `em_F7`.
 

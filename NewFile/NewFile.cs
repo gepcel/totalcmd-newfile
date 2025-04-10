@@ -133,11 +133,13 @@ namespace NewFile
             if (openafter)
             {
                 Process process = new Process();
-                process.StartInfo.FileName = @"C:\python\tools\totalcmd1151\TOTALCMD64.EXE";
-                process.StartInfo.Arguments = String.Format("/O /S /L={0}", Path.Combine(Root!, name));
+                process.StartInfo.FileName = config.Totalcmdpath;//@"C:\python\tools\totalcmd1151\TOTALCMD64.EXE";
+                process.StartInfo.Arguments = String.Format("/O /S /L=\"{0}\"", Path.Combine(Root!, name));
                 process.StartInfo.UseShellExecute = true;
                 process.EnableRaisingEvents = false;
+                //MessageBox.Show(process.StartInfo.FileName + "\n" + process.StartInfo.Arguments);
                 process.Start();
+                
             }
         }
 
@@ -253,7 +255,11 @@ namespace NewFile
                 data["Configuration"]["txtformat"] = txtformat;
                 //txtformat ??= ".txt,.md,.ini,.py,.xml,.cs";
                 TxtFormats = new List<string>(txtformat!.Split(",", StringSplitOptions.RemoveEmptyEntries & StringSplitOptions.TrimEntries));
-                Totalcmdpath = data["Configuration"]["totalcmd"];
+                string t = data["Configuration"]["totalcmd"];
+                if(File.Exists(t))
+                {
+                    Totalcmdpath = t;
+                }
             }
             else
             {
@@ -267,6 +273,7 @@ namespace NewFile
                 if (File.Exists(t))
                 {
                     data["Configuration"]["totalcmd"] = t;
+                    Totalcmdpath = t;
                 }
             }
         }
